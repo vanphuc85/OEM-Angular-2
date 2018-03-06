@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>New Age - Start Bootstrap Theme</title>
+
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link href="./../../assets/css/new-age.css" rel="stylesheet">
+
+
+</head>
+<app-header-big [image]="alert.alertConditions[0].link" [name]="'Select Contact'" [condition]="alert.convertConditionToView()" [dataName]="alert.dataName" ></app-header-big>
+<app-alert-box  (exit)="alertBox($event)" *ngIf = "isActiveAlertBox" [message] = "message" ></app-alert-box>
+
+<body id="page-top">
+  <section id="contact" class="contact bg-primary-loc size-increase">
+
+
+    <div class="container-fluid">
+      <div class="sample">
+
+        <div class="col-md-6 col-md-offset-3 box loc">
+          <div class="contact-mob-align">
+            <table class="m-headerbot">
+
+              <tr class="fborder changecolor">
+                <td style="">
+                  <div>
+                    <br>
+                    <img [src]="alert.alertConditions[0].link" class="img-responsive m-img" alt="">
+                  </div>
+                  <div class="s-text-a mea-text db-color">
+                    <br>{{alert.dataName}}</div>
+                  <div class=" mea-text b-color font-16">
+                    {{alert.convertConditionToView()}} <br>
+                      <br>
+                  </div>
+                </td>
+
+
+              </tr>
+
+            </table>
+
+
+            <!-- Contacts list starts     -->
+            <table>
+
+              <tr class="gborder" *ngFor="let item of contacts; let i = index" 
+              >
+                <td class="loc-w">
+                  <img src="./assets/image/s-contacts.svg" class="img-responsive loc-img" alt="">
+                </td>
+                <td>
+                  <div>
+                    <b>{{item.userName}}</b>
+                  </div>
+                  <div class="cursor db-color" (click)="contact(item,'phone')"><span>{{item.phone}}</span></div>
+                  <div class="cursor db-color" (click)="contact(item,'email')"><span>{{item.email}}</span></div>
+                </td>
+
+                <td style="width: 42px;">
+                </td>
+
+                <td style="width: 42px;">
+                  <div style="height:20px"></div>
+                  <div style="height:20px">
+                    <a [ngClass]= "item.activePhone ? '' : 'hidden' ">
+                      <img src="./assets/image/tick.svg" class="img-responsive small-c" alt="">
+                    </a>
+                  </div>
+                  <div style="height:20px">
+                    <a  [ngClass]= "item.activeEmail ? '' : 'hidden' " >
+                      <img src="./assets/image/tick.svg" class="img-responsive small-c" alt="">
+                    </a>
+                  </div>
+                </td>
+
+              </tr>
+            </table>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <footer>
+    <!-- <div class="container">
+        <div class="buttondiv">
+            <a class="buttonnew"(click)= "cancel()">Cancel</a>
+        </div>
+      <div class="buttondiv">
+        <a class="buttonnew" (click)= "saveAlertSender()">OK</a>
+      </div>
+    </div> -->
+
+    <div class="buttondiv">
+      <table class="pzero" style="margin-left: 5%;width: 90%;">
+      <tr>
+
+      <td class="dbutton">
+      <a  class="buttonnew"(click)= "cancel()">Cancel</a>
+      </td>
+      <td class="dbutton">
+      <a  class="buttonnew" (click)= "saveAlertSender()">OK</a>
+      </td>
+
+      </tr>
+      </table>
+
+      </div>
+
+
+  </footer>
+  <!-- Theme JavaScript -->
+  <script src="./../../assets/js/new-age.js"></script>
+
+</body>
+
+</html>

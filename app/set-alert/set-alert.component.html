@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+ 
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+ 
+
+    <!-- Theme CSS -->
+    <link href="./../../assets/css/new-age.css" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<app-header></app-header>>
+<app-confirm    (exit)="changeStatus($event)" *ngIf  = "isActive"         [message] = "message" ></app-confirm>
+<app-alert-box  (exit)="alertBox($event)"     *ngIf = "isActiveAlertBox"  [message] = "message" ></app-alert-box>
+
+<body id="page-top">
+
+    <section id="contact" class="contact bg-primary-loc">
+
+
+        <div class="container-fluid">
+        <div class="sample">
+          <!--div class="col-md-6 col-md-offset-3 box sear">
+            <div>                            
+
+                    <div class="form-group">
+                        <div class="icon-addon addon-md">
+                            <input type="text" placeholder="Search Device" class="form-control" id="location">
+                            <label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>
+                        </div>
+                    </div>
+                            
+            </div>
+          </div-->
+          <div class="col-md-6 col-md-offset-3 box loc ">
+            <div>   
+                <!-- <table class=" m-headerbot">
+                    
+                  <tr class="fborder changecolor"  style="background-color: white;" >
+                      <td>
+                          <div ><br><img src="./../assets/image/temp01.svg" class="img-responsive m-img" alt="" ></div>
+                          <div  class="mea-text db-color" ><br>{{dataName}}</div>
+                          <div class="s-text-a mea-text  b-color font-16">{{alertView.length}} Alerts<br><br></div>
+                      </td>
+                  
+
+                  </tr>
+                    
+                </table>                          -->
+                <table >
+
+                  <tr class="gkborder cursor"  (click)="goToCreateAlert()">
+                    <!-- <td class="loc-w" ><img src="./assets/image/alert-new.svg" class="img-responsive loc-img" alt="" ></td> -->
+                    <td style="padding-left:35px;" >
+                        <div class="db-color"><b> Create New Alert</b></div>
+                    </td>
+                    <td style="width: 42px;"    >
+                          
+                          
+                    </td>
+                    <td style="width: 42px;"    >
+                        <img src="./assets/image/a-add.svg" class="img-responsive small-a-l" alt="" >                      
+                    </td>
+
+                  </tr>
+
+                  <tr class="gkborder cursor" *ngFor="let item of alertView; let i = index">
+                    <!-- <td  (click)="editAlerts(i)" class="loc-w" ><img src="./assets/image/measure01.svg" class="img-responsive loc-img" alt=""></td> -->
+                    <td (click)="editAlerts(i)"  style="padding-left:35px;">
+                        <div><b>{{item.name}}</b></div>
+                        <div class="graydark">{{item.condition}}</div>
+                    </td>
+                    <td style="width: 42px;"    >
+                          <img [src]="item.ignore ? './assets/image/a-bell-g-black.svg' : './assets/image/a-bell.svg'"
+                           class="img-responsive small-a-l" id="001" alt="" (click) = "udpateStatus(item.name)">
+                          
+                    </td>
+                    <td style="width: 42px;"    >
+                          <img src="./assets/image/a-del.svg" class="img-responsive small-a-l" alt="" (click)="confirmDelete(item.name)" >
+                          
+                    </td>
+
+                  </tr>
+
+                
+
+                 
+
+                 
+
+                </table>
+               
+            </div>
+          </div>
+        </div>
+        </div>
+        
+
+
+    </section>
+
+
+    <footer>
+        <div class="container">
+           
+        </div>
+    </footer>
+    <script>
+        
+        function myFunction(x,y){
+            if(y.style.opacity != "0.3"){
+                y.style.opacity = "0.3"; 
+                y.style.filter  = 'alpha(opacity=30)';
+            } else{
+                y.style.opacity = "1.0";
+                y.style.filter  = 'alpha(opacity=100)';
+            }
+
+            if(x.src != "./assets/image/a-bell-g-black.svg"){
+                x.src = "./assets/image/a-bell-g-black.svg";
+            } else {
+                x.src = "./assets/image/a-bell.svg";
+            }
+
+        }
+    </script>
+
+    <!-- Theme JavaScript -->
+    <script src="./../../assets/js/new-age.js"></script>
+
+
+</body>
+
+</html>
