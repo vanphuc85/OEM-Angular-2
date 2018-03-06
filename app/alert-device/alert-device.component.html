@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+
+
+    <!-- Theme CSS -->
+
+    <link href="./../../assets/css/new-age.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<app-header></app-header>
+
+
+<body id="page-top">
+    <div *ngIf="nodes.length == 0">
+        <img src="./assets/image/waiting.gif" class="centered">
+    </div>
+
+    <section id="contact" class="contact bg-primary-loc">
+        <div class="container-fluid">
+            <div class="sample">
+                <div class="col-md-6 col-md-offset-3 box sear">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <div #div *ngIf="nodes.length > 0" class="icon-addon addon-md">
+                                    <input type="text" id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" class="form-control">
+                                    <label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>
+                                    <div style="background-color: #004368;height: 75px;  
+                                    text-align: left;padding: 10px 20px; 
+                                    border-top: 20px solid white; border-left: 15px solid white;
+                                    border-right: 15px solid white;
+                                    border-bottom: 10px solid white;   
+                                    ">
+                                    <b style="color:white;font-size: 18px">Hierarchy</b>
+                                    </div>
+                                    <tree-root (initialized)="onInitialized(tree)" (activate)="activate($event)" (toggleExpanded)="toggleExpanded($event)" (focus)="focus($event)"
+                                        [options]="options" [(state)]="state" #tree [focused]="true" [nodes]="nodes"></tree-root>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
+
+
+
+    <!-- Theme JavaScript -->
+
+    <script src="./../../assets/js/new-age.js"></script>
+
+
+</body>
+
+</html>

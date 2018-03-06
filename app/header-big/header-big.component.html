@@ -1,0 +1,68 @@
+
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top"  style="text-align: center;    background-color: white;">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" (click)=hide()>
+                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-brand page-scroll nav-pos min768" href="#page-top"   style="padding-left:45px;background-color:white;"><b>{{name}}</b></div>
+                <a class="max767"> <img src="./assets/image/sample-logo.svg" class="img-responsive lg-img" alt="" ></a>
+
+                <table *ngIf="active" class=" m-headertop" style="width:100%;">
+                    
+                  <tr class="fborder changecolor"  style="background-color: white;" >
+                      <td style="">
+                          <div ><br><img [src]="image" style="border-radius: 50%;" class="img-responsive m-img" alt="" ></div>
+                          <div  class="mea-text b-color" style="font-size: 12px;" ><br><b>{{dataName}}</b></div>
+                          <div class="mea-text b-color" style="font-size: 14px;"><b>{{condition ? condition : ""}}</b><br><br></div>
+                      </td>
+                  
+
+                  </tr>
+                    
+                </table>   
+                <div class="ab-img"  onclick="window.history.back()" > <img src="./assets/image/arrow-back.png" class="img-responsive arrow-img" alt="" ></div>   
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"  style="background-color:white;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" routerLink="/device">Devices</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" routerLink="/alerts">Alerts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" routerLink="/contacts">Contacts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" routerLink="/login">Logout</a>
+                    </li>
+                    
+                </ul>
+            </div> -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:white;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li *ngFor="let item of menuList; let i = index">
+                        <a (click)="routing(item)" class="page-scroll head-text" routerLink="/{{item.name}}">
+                            <b [ngClass]="item.active ? 'db-color' : '' ">{{item.displayName}}</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+
+

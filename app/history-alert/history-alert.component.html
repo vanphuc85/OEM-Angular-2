@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+
+    <!-- Theme CSS -->
+    <link href="../../assets/css/new-age.css" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<app-header></app-header>
+<app-alert-box  (exit)="alertBox($event)" *ngIf = "isActiveAlertBox" [message] = "message" ></app-alert-box>
+
+<body id="page-top">
+
+    <section id="contact" class="contact bg-primary-h bg-img04">
+
+
+        <div class="container-fluid">
+        <div class="sample">
+
+          <div class="col-md-6 col-md-offset-3 box loc ">
+            <div>   
+
+              <img src="./assets/image/arrow-close.svg" class="img-responsive small-l h-fixed cursor" id="h-close" alt="" 
+              onclick="myFunction2(document.getElementsByClassName('unhidden'),document.getElementById('filter'), document.getElementById('h-close'))" >
+
+                <!-- Filter -->
+                <div class="box sear">
+                        <div>  
+                            <form autocomplete="on">           
+                                <div class="form-group" >
+                                    <div class="icon-addon addon-md">
+                                        <input type="text" placeholder="Search By Alert, Measure" name="textSearch" [(ngModel)]="textSearch" (change)="search()" class="form-control" id="location">
+                                        <label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email" (click)="search()" ></label>
+                                    </div>
+                                </div>
+                            </form>  
+                        </div>
+                      </div>
+                      <br/>
+               
+
+                <!-- End of filter -->
+                
+
+
+            
+
+                <!-- start of values -->
+                <table class="h-time-value max499  bor-bot"  *ngFor="let item of evenLogs; let i = index" >
+                    <tr  class=" mh40">
+                      <td  class="s-text w120">{{item.convertTimeStamp()}}</td>
+                      <td class="r-text "> {{item.logValue}}</td>
+                    </tr>
+                  
+                </table>
+                <table class="h-time-value min500 bor-bot"  *ngFor="let item of evenLogs; let i = index" >
+                    <tr  class="">
+                      <td  class="s-text">{{item.convertTimeStamp()}}</td>
+                    </tr>
+                    <tr  class="mh40">
+                        <td class="s-text"> <b>{{item.logValue}}</b></td>
+
+                    </tr>
+                </table>                
+                
+                <br>
+
+
+              
+                <!-- end of values -->
+
+
+
+
+                <!-- End of list -->
+
+
+
+
+               
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
+    <!-- History Filter -->
+    <script>
+
+
+
+        function myFunction(h,f,c){
+          f.style.display ="none";
+          c.style.display ="block";
+          /*console.log(h.length);*/
+          var l = h.length;
+          for (var i=l; i>0; i--){
+            
+              h[0].className = ' unhidden';
+
+
+          }
+
+        }
+
+
+        function myFunction2(h,f,c){
+          f.style.display ="block";
+          f.className = 'hborder';
+          c.style.display ="none";
+          var l = h.length;
+          for (var i=l; i>0; i--){
+            
+              h[0].className = 'hidden';
+
+
+          }
+
+          
+        }
+
+
+       /* f.onclick = myFunction(h);*/
+        
+
+
+
+    </script>
+
+
+   
+
+    <!-- Theme JavaScript -->
+    <script src="./../../assets/js/new-age.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <!--    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
+        <link rel="stylesheet" href="lib/device-mockups/device-mockups.css">-->
+
+    <!-- Theme CSS -->
+    <link href="../../assets/css/new-age.css" rel="stylesheet">
+</head>
+
+<app-header></app-header>
+<app-alert-box (exit)="alertBox($event)" *ngIf="isActiveAlertBox" [message]="message"></app-alert-box>
+
+
+<div id="contact" class="contact bg-primary-loc top70">
+
+
+    <div class="container-fluid fixed-bot" id="cf" style="">
+        <div class="sample">
+            <!--div class="col-md-6 col-md-offset-3 box sear">
+            <div>                            
+
+                    <div class="form-group">
+                        <div class="icon-addon addon-md">
+                            <input type="text" placeholder="Search Device" class="form-control" id="location">
+                            <label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"></label>
+                        </div>
+                    </div>
+                            
+            </div>
+          </div-->
+            <div class="col-md-6 col-md-offset-3 box loc" style="background-color:white; padding-top:10px;">
+                <div>
+                    <table style="  margin-top: 10px;">
+
+                        <tr class="dbg">
+                            <!--                       <td style="width: 50px;" >
+                          <img src="./../assets/image/location-s.svg" class="img-responsive small-l" alt="" >
+                          
+                      </td> -->
+                            <td class="dev" style="padding-left:20px;width: 100%">
+                                <b (click)="gobackDevice()" class="cursor w-color font-16">
+                                    <ol class="breadcrumb">
+                                        <li *ngFor="let path of paths; let i = index" class="breadcrumb-item">
+                                            <a (click)="gobackDevice()">{{path}}</a>
+                                        </li>
+
+                                    </ol>
+                                </b>
+                            </td>
+                            <td style="width: 50px;" class="cursor">
+                                <img src="./assets/image/setting.svg" class="img-responsive small-l" alt="" (click)="gotoMesuareSetting()">
+
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    <!-- Start of measures -->
+                    <div class="m-overflown loc-d" id="mo" style="max-height:160px;">
+
+
+                        <table>
+                            <tr style="height:45px" class="mborder cursor" #activeMeasure *ngFor="let item of measureExtend; let i = index" (click)="selectMeasureName(item.name)">
+                                <td style="width: 50px;">
+                                    <img [src]="item.link" class="img-responsive small-l" alt="">
+                                </td>
+                                <td class="dev w50">{{item.name}}</td>
+                                <td class="dev r1-text w30">{{item.name =='Atmospheric Pressure' ? (item.lastValue | number:'.3-3') : item.lastValue
+                                    | number:'.2-2'}} </td>
+                                <td class="dev l-text w10">{{item.unit.name}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <!-- End of overflown -->
+
+
+                    <!-- Start of time selector -->
+
+                    <div class="">
+                        <div>
+                            <!-- start of overflown -->
+                            <table class="time1">
+                                <tr>
+                                    <td class="dev text-time cursor db-color" (click)="selectTypeTime('m')">
+                                        <span style="font-weight: bold" timeMode>m</span>
+                                    </td>
+                                    <td class="dev text-time cursor db-color" (click)="selectTypeTime('H')">
+                                        <span timeMode>H</span>
+                                    </td>
+                                    <td class="dev text-time cursor db-color" (click)="selectTypeTime('D')">
+                                        <span timeMode>D</span>
+                                    </td>
+                                    <td class="dev text-time cursor db-color" (click)="selectTypeTime('M')">
+                                        <span timeMode>M</span>
+                                    </td>
+
+                                    <td class="dev text-time cursor  db-color" (click)="selectTypeTime('Y')">
+                                        <span timeMode>Y</span>
+                                    </td>
+                                    <!-- <td class="dev text-time cursor">Custom</td> -->
+                                    <!--                      <td class="  ">
+                         <span style="top: 5px;" class="dev buttonalert dash-alert cursor">Set Alert</span></td> -->
+                                </tr>
+
+                            </table>
+                            <!-- End of time selector -->
+
+
+                            <div>
+
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<app-detail *ngIf="getData.displayMode == 'detail'" [detailData]="detailData" [dataName]="dataName"></app-detail>
+<app-table *ngIf="getData.displayMode == 'table'" [eventBeans]="eventBeans" [timeMode]="getData.timeMode"></app-table>
+<app-graph *ngIf="getData.displayMode == 'graph'" [eventBeans]="eventBeans" [dataName]="dataName" [timeMode]="getData.timeMode"></app-graph>
+
+<br>
+<br>
+<br>
+
+<footer>
+    <div class="container">
+        <div class="buttondiv">
+            <table class="pzero" style="width:100%;">
+                <tr>
+                    <td class="dbutton">
+                        <a class="buttonnew cursor" [ngStyle]="{'background-color': getData.displayMode == 'detail' ? '#222222' : ''}" (click)="getDisplay('detail')">Live</a>
+                    </td>
+                    <td class="dbutton">
+                        <a class="buttonnew cursor" [ngStyle]="{'background-color': getData.displayMode == 'table' ? '#222222': ''}" (click)="getDisplay('table')">Table</a>
+                    </td>
+                    <td class="dbutton">
+                        <a class="buttonnew cursor" [ngStyle]="{'background-color': getData.displayMode == 'graph' ? '#222222': ''}" (click)="getDisplay('graph')">Graph</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+</script>
+
+<!-- global setting -->
+<script src="js/global.js"> </script>
+<!-- jQuery -->
+<script src="lib/jquery/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="../../assets/js/new-age.js"></script>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+<!--    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="lib/device-mockups/device-mockups.css">-->
+
+    <!-- Theme CSS -->
+    <link href="../../../assets/css/new-age.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<app-header-big [name]="'Create New Contact'"  [image]="'./assets/image/contacts-b.svg'"></app-header-big>
+<app-alert-box  (exit)="alertBox($event)" *ngIf = "isActiveAlertBox" [message] = "message" ></app-alert-box>
+<body id="page-top">
+    <section id="contact" class="contact bg-primary-loc size-increase percent100">
+
+
+        <div class="container-fluid">
+        <div class="sample">
+
+          <div class="col-md-6 col-md-offset-3 box loc loc-none">
+            <div>   
+                <table class=" m-headerbot ">
+                    
+                  <tr class="fborder changecolor"  style="background-color: white;" >
+                      <td style="">
+                          <div ><br><img src="./assets/image/contacts-b.svg" class="img-responsive m-img" alt="" ></div>
+                          <div  class="mea-text" ><br>
+
+<!--                             <form action="/action_page.php" class="c-upload">
+
+                              <input type="file" name="pic" accept="image/*">
+                              
+                            </form> -->
+
+                          </div>
+                          <div class="s-text-a mea-text"> <br></div>
+                      </td>
+                  
+
+                  </tr>
+                    
+                </table>        
+
+                <!-- Start of contact detail -->
+
+                <table class=" con-values ">
+                  <tr>
+                    <td class=" nc-text"><br>
+                      FULL NAME
+                    </td>
+                  </tr>
+
+                  <tr>  
+                    <td style="width: 250px;"    >
+                          <div  class="mv-text" ><br>
+                               
+                                <input class="mv-input-contact" type="text" placeholder="Enter Full Name"  [(ngModel)]="contactVo.userName" >
+                                <img src="./assets/image/c-name.svg" style="" class="img-responsive small-l icon-right" alt="" >
+                                
+                                                         
+                          </div>                                               
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="nc-text">
+                      MOBILE PHONE
+                    </td>
+                  </tr>
+
+                  <tr>  
+                    <td style="width: 250px;"    >
+                          <div  class="mv-text" ><br>
+                               
+                                <input class="mv-input-contact" type="text" placeholder="65 8888 8888" #phone  [(ngModel)]="contactVo.phone">
+                                <img src="./assets/image/c-mobile.svg" style="" class="img-responsive small-l icon-right" alt="" >
+                                                           
+                          </div>                                               
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class=" nc-text">
+                      EMAIL
+                    </td>
+                  </tr>
+
+                  <tr>  
+                    <td style="width: 250px;"    >
+                          <div  class="mv-text" ><br>
+                               
+                                <input class="mv-input-contact" type="text" placeholder="abc@example.com" #email [(ngModel)]="contactVo.email">
+                                <img src="./assets/image/c-email.svg" style="" class="img-responsive small-l icon-right" alt="" >
+                                                          
+                          </div>                                               
+                    </td>
+                  </tr>
+
+
+                </table>
+                <br>
+                <br>
+
+                <!-- End of contact detail -->
+
+
+
+
+
+               
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="container">
+
+
+        <div class="buttondiv">
+            <table class="pzero" style="margin-left: 5%;width: 90%;">
+            <tr>
+      
+            <td class="dbutton">
+            <a  class="buttonnew"(click)= "cancel()">Cancel</a>
+            </td>
+            <td class="dbutton">
+            <a class="buttonnew" (click)="save()">Save</a>
+            </td>
+      
+            </tr>
+            </table>
+      
+        </div>
+
+                
+        </div>
+
+
+        
+    </footer>
+
+    <!-- global setting -->
+    <script src="./../assets/js/global.js"> </script>
+    <!-- jQuery -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="./../assets/js/new-age.js"></script>
+
+</body>
+
+</html>

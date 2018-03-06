@@ -1,0 +1,360 @@
+<app-header></app-header>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+<!--    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+<!--    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="lib/device-mockups/device-mockups.css">-->
+
+    <!-- Theme CSS -->
+    <link href="../../../assets/css/new-age.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+    <script src="../../../assets/js/global.js"> </script>
+    <script src="global.js"> </script>
+
+
+    <section id="contact" class="contact bg-primary-h">
+
+
+        <div class="container-fluid">
+        <div class="sample">
+
+          <div class="col-md-6 col-md-offset-3 box loc ">
+            <div>   
+
+              <img src="./../assets/image/arrow-close.svg" class="img-responsive small-l h-fixed cursor" id="h-close" alt="" 
+              onclick="myFunction2(document.getElementsByClassName('unhidden'),document.getElementById('filter'), document.getElementById('h-close'))" >
+
+                <!-- Filter -->
+
+                <table class="his-text">
+                    
+                  <tr class="fborder cursor" id="filter" onclick="myFunction(document.getElementsByClassName('hidden'),document.getElementById('filter'), document.getElementById('h-close'))" >
+                      <td style="width: 50px;" >
+                          <img src="./../assets/image/h-filter.svg" class="img-responsive small-l" alt="" >
+                          
+                      </td>
+                      <td class="dev">All Devices, All Measures, Anytime</td>
+                      <td><img src="./../assets/image/h-arrow.svg" class="img-responsive small-l a-right-hy" alt="" ></td>
+                  </tr>
+                </table>
+
+                
+
+                <!-- Location -->
+                <div class="hidden">
+                <table class="his-text">
+                    
+
+                  <tr class="fborder cursor"  onclick="document.location='location-history.html'"  >
+                      <td style="width: 50px;" >
+                          <img src="./../assets/image/h-location.svg" class="img-responsive small-l" alt="" >
+                          
+                      </td>
+                      <td class="dev">Select a Device</td>
+                      <td><!-- <img src="img/h-arrow.svg" class="img-responsive small-l a-right-h" alt="" > --></td>
+                  </tr>
+                </table><br>  
+                    
+
+
+                <!-- Measures -->
+                <table class="his-text">
+                    
+                  <tr class=" fborder cursor" onclick="document.location='measure-history.html'"  >
+                      <td style="width: 50px;" >
+                          <img src="./../assets/image/h-measures.svg" class="img-responsive small-l" alt="" >
+                          
+                      </td>
+                      <td class="dev">Select Measure(s)</td>
+                      <td><!-- <img src="img/h-arrow.svg" class="img-responsive small-l a-right-h" alt="" > --></td>
+                  </tr>
+                </table><br>
+
+                <!-- Time -->
+                <table class="his-text">
+                    
+                  <tr class="fborder cursor"  onclick="document.location='history-time-from.html'"  >
+                      <td style="width: 50px;" >
+                          <img src="./../assets/image/h-time.svg" class="img-responsive small-l" alt="" >
+                          
+                      </td>
+                      <td class="dev">Anytime</td>
+                      <td><!-- <img src="img/h-arrow.svg" class="img-responsive small-l a-right-h" alt="" > --></td>
+                  </tr>
+                </table>  
+                </div>
+
+                <!-- End of filter -->
+                
+
+
+               <!-- Start of time -->
+
+                <table class="">  
+                  <tr  class="n-bg">
+                      <td class="dev h-text-time"><b>04 September 2017</b></td>  
+                                    
+                  </tr>                    
+                </table>    
+                <!-- End of time -->
+
+
+                <!-- start of values -->
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-a </td>
+                      <td class="r-text "> Temp < 15.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  13.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  04 Sep 2017 11:18</td>
+                    </tr>
+                </table><br>
+
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-b </td>
+                      <td class="r-text "> Temp < 18.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  17.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  04 Sep 2017 10:20</td>
+                    </tr>
+                </table><br>
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-a </td>
+                      <td class="r-text "> Temp < 15.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  13.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  04 Sep 2017 09:18</td>
+                    </tr>
+                </table><br>
+
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-b </td>
+                      <td class="r-text "> Temp < 18.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  16.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  04 Sep 2017 07:20</td>
+                    </tr>
+                </table><br>
+                <!-- end of values -->
+
+
+               <!-- Start of time -->
+
+                <table class="">  
+                  <tr  class="n-bg">
+                      <td class="dev h-text-time"><b>03 September 2017</b></td>                 
+                  </tr>                    
+                </table>  
+                <!-- End of time -->
+
+
+                <!-- start of values -->
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-a </td>
+                      <td class="r-text "> Temp < 15.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  13.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  03 Sep 2017 11:18</td>
+                    </tr>
+                </table><br>
+
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-b </td>
+                      <td class="r-text "> Temp < 18.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  15.50 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  03 Sep 2017 10:20</td>
+                    </tr>
+                </table><br>
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-a </td>
+                      <td class="r-text "> Temp < 15.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  13.00 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  03 Sep 2017 09:18</td>
+                    </tr>
+                </table><br>
+
+
+                <table class="h-time-value">
+                    <tr  class="">
+                      <td  class="s-text"> Walkway 1 > Device W-b </td>
+                      <td class="r-text "> Temp < 18.00 °C</td>
+                    </tr>
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  16.50 °C</td>
+                    </tr>
+
+                    <tr  class="">
+                      <td  class="s-text"> </td>
+                      <td class="r-text ">  03 Sep 2017 07:20</td>
+                    </tr>
+                </table><br>
+                <!-- end of values -->
+
+
+
+
+                <!-- End of list -->
+
+
+
+
+               
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
+    <!-- History Filter -->
+    <script>
+
+
+
+        function myFunction(h,f,c){
+          f.style.display ="none";
+          c.style.display ="block";
+          /*console.log(h.length);*/
+          var l = h.length;
+          for (var i=l; i>0; i--){
+            
+              h[0].className = ' unhidden';
+
+
+          }
+
+        }
+
+
+        function myFunction2(h,f,c){
+          f.style.display ="block";
+          f.className = 'hborder';
+          c.style.display ="none";
+          var l = h.length;
+          for (var i=l; i>0; i--){
+            
+              h[0].className = 'hidden';
+
+
+          }
+
+          
+        }
+
+
+       /* f.onclick = myFunction(h);*/
+        
+
+
+
+    </script>
+
+
+    <!-- global setting -->
+    <script src="../../../global.js"> </script>
+
+    <!-- jQuery -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="./../assets/js/new-age.js"></script>
+
+</body>
+
+</html>

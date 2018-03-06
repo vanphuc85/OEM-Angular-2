@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+
+    <!-- Theme CSS -->
+    <link href="./../../assets/css/new-age.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<app-header-input [inputText]="alert.alertName" [name]="'Edit Alert'"></app-header-input>
+<app-confirm  (exit)="confirmSave($event)" *ngIf = "isActivePopUp" [message] = "message" ></app-confirm>
+<app-alert-box  (exit)="alertBox($event)" *ngIf = "isActiveAlertBox" [message] = "message" ></app-alert-box>
+
+<body id="page-top">
+
+
+
+
+
+    <section id="contact" class="contact bg-primary-loc size-increase-200">
+
+
+        <div class="container-fluid">
+            <div class="sample">
+
+                <div class="col-md-6 col-md-offset-3 box loc">
+                    <div>
+                        <table class="m-headerbot">
+
+                            <tr class="fborder changecolor">
+                                <td>
+                                    <div>
+                                        <br>
+                                    </div>
+                                    <div class="mea-text">
+                                        <br>
+                                        <form action="/action_page.php">
+                                            <input class="m-input" type="text" disabled  [(ngModel)] ="alert.alertName" name = "name">
+                                            <br>
+                                        </form>
+                                    </div>
+                                    <div class="s-text-a mea-text">
+                                        <br>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+
+                        </table>
+                        <table>
+
+                            <tr class="gborderNew"  *ngFor="let item of alert.alertConditions;let i = index;">
+                                <td class="loc-w">
+                                    <img [src]="alert.alertConditions[i].link" class="img-responsive small-l" alt="">
+                                </td>
+                                <td>
+                                    <div>{{alert.alertConditions[i].dataName}}</div>
+                                </td>
+                                <td>
+                                    <div style="padding: 0 20px;">
+
+                                        <select [(ngModel)]="alert.alertConditions[i].relationOp">
+                                            <option *ngFor="let option of options; let i = index"   [ngValue]="option.value" [selected]="option.value ==item.relationOp">
+                                                {{option.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="mv-text">
+                                        <input class="mv-input" type="text" name="condition_value"  [(ngModel)]="alert.alertConditions[i].measureValue">
+                                    </div>
+                                </td>
+                                <td>
+                                    {{alert.alertConditions[i].units}}
+                                </td>
+                            </tr>
+
+
+                            <!-- <tr class="gborderNew">
+
+                                <td class="loc-w">
+                                    <img src="./assets/image/a-alert-s.svg" class="img-responsive small-l" alt="">
+                                </td>
+                                <td>
+                                    <div>Active</div>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td class="float_right">
+                                    <div>
+                                        <img *ngIf="alert.ignore == 0" (click)="changeStatus()"  src="./assets/image/toggle_on.jpg" class="img-responsive small-l" style="width: 50px" alt="">
+                                        <img *ngIf="alert.ignore == 1" (click)="changeStatus()" src="./assets/image/toggle_off.png" class="img-responsive small-l" style="width: 50px"  alt="">
+                                </div>
+                                </td>
+                                <td>
+                                  
+
+                                </td>
+                            </tr> -->
+
+                            <tr class="gborderNew cursor" (click)="selectContact()">
+                                <td class="loc-w">
+                                    <img src="./assets/image/a-contacts.svg" class="img-responsive small-l" alt="">
+                                </td>
+                                <td>
+                                    <div>Select Contacts</div>
+                                </td>
+
+                                <td colspan="3" class="db-color">
+                                 <b><span>{{alert.getReceipient() == '' ? 'Add Contact' :  alert.getReceipient()}}</span></b>  
+                                </td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                        <br>
+                        <br>
+
+
+
+
+
+
+
+                        <!-- <div class="buttondiv">
+                <a class="buttonnew" href="set-alert.html">Set Alert</a>
+                </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <!-- <div class="container">
+                <div class="buttondiv">
+                        <a class="buttonnew" (click)="cancel()">Cancel</a>
+                    </div>
+        
+            <div class="buttondiv">
+                <a class="buttonnew" (click)="saveAlert()">Save</a>
+            </div>
+
+        </div> -->
+        <div class="buttondiv">
+            <table class="pzero" style="margin-left: 5%;width: 90%;">
+            <tr>
+      
+            <td class="dbutton">
+            <a  class="buttonnew"(click)= "cancel()">Cancel</a>
+            </td>
+            <td class="dbutton">
+            <a  class="buttonnew"  (click)="saveAlert()">Save</a>
+            </td>
+      
+            </tr>
+            </table>
+      
+        </div>
+
+
+    </footer>
+
+
+    <!-- Theme JavaScript -->
+    <script src="./../../assets/js/new-age.js"></script>
+
+</body>
+
+</html>
